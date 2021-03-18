@@ -1,0 +1,41 @@
+<template>
+  <div class="wrapper">
+    <div class="wrapper-content">
+
+      <section>
+        <div class="container">
+
+          <button class="btn btnPrimary" @click="modalFirst = !modalFirst">Show First Modal</button>
+
+          <Modals 
+          title="First Modal" 
+          v-if="modalFirst"
+          @close="modalFirst = !modalFirst"
+          />
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+</template>
+
+<script>
+import Modals from './components/Modal'
+
+export default {
+  components: {
+    Modals
+  },
+  data() {
+    return {
+      modalFirst: false
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+
+</style>
