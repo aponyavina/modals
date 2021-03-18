@@ -67,6 +67,12 @@ export default {
                     email: this.email
                 }
                 console.log(user);
+
+                // reset
+                this.name = ''
+                this.email = ''
+                this.$v.$reset()
+                this.$emit('close')
             }
         }
     }
