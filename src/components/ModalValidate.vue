@@ -5,6 +5,7 @@
     >
         <div slot="body">
             <form @submit.prevent="">
+                <!-- name -->
                 <div class="form-item" :class="{errorInput: $v.name.$error}">
                     <label>Name:</label>
                     <p class="errorText" v-if="!$v.name.required">Filled is required</p>
@@ -15,8 +16,18 @@
                     @change="$v.name.$touch()"
                     >
                 </div>
-                <label>E-mail:</label>
-                <input v-model="email">
+                <!-- email -->
+                    <div class="form-item" :class="{errorInput: $v.email.$error}">
+                    <label>E-mail:</label>
+                    <p class="errorText" v-if="!$v.email.required">Filled is required</p>
+                    <p class="errorText" v-if="!$v.email.email">Email is not correct!</p>
+                    <input 
+                    v-model="email" 
+                    :class="{error: $v.email.$error}"
+                    @change="$v.email.$touch()"
+                    >
+                </div>
+                <!-- button -->
                 <button class="btn btnPrimary">Submit!</button>
             </form>
         </div>
