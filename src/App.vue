@@ -9,7 +9,7 @@
 
           <Modals 
           title="First Modal" 
-          v-if="modalFirst"
+          v-show="modalFirst"
           @close="modalFirst = !modalFirst"
           >
           <div slot="body">
