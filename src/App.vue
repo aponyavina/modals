@@ -38,6 +38,10 @@
           </div>
           </Modals>
 
+          <!-- modal with validation -->
+          <button class="btn btnPrimary" @click="modalValidate = !modalValidate">Show Modal Validate</button>
+          <ModalValidate v-show="modalValidate"  @close="modalValidate = false"/>
+
         </div>
       </section>
 
@@ -47,10 +51,11 @@
 
 <script>
 import Modals from './components/Modal'
+import ModalValidate from './components/ModalValidate'
 
 export default {
   components: {
-    Modals
+    Modals, ModalValidate
   },
   data() {
     return {
@@ -59,7 +64,8 @@ export default {
         show: false,
         name: '',
         email: ''
-      }
+      },
+      modalValidate: false
     }
   },
   methods: {
