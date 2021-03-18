@@ -11,7 +11,12 @@
           title="First Modal" 
           v-if="modalFirst"
           @close="modalFirst = !modalFirst"
-          />
+          >
+          <div slot="body">
+            <p>Text</p>
+            <button class="btn btnPrimary" @click="modalFirst = !modalFirst">Well done!</button>
+          </div>
+          </Modals>
 
         </div>
       </section>

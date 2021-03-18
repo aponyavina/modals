@@ -10,6 +10,7 @@
 
       <!-- body -->
       <div class="modal-body">
+        <slot name="body">Default body</slot>
       </div>
 
     </div>
